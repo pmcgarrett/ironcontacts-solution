@@ -9,7 +9,6 @@ function App() {
     if (contactsJSON.length > 5) {
       const randomIndex =
         Math.floor(Math.random() * (contactsJSON.length - 5)) + 5;
-      console.log("randomIndex :>> ", randomIndex);
       const newRandomContact = contactsJSON[randomIndex];
       contactsJSON.splice(randomIndex, 1);
       setContacts([newRandomContact, ...contacts]);

@@ -31,15 +31,9 @@ function App() {
     <div className="App">
       <h1>IronContacts</h1>
       <div className="buttons">
-        <button style={{ margin: "0 10px" }} onClick={addRandomContact}>
-          Add Random Contact
-        </button>
-        <button style={{ margin: "0 10px" }} onClick={() => sort("name")}>
-          Sort By Name
-        </button>
-        <button style={{ margin: "0 10px" }} onClick={() => sort("popularity")}>
-          Sort By Popularity
-        </button>
+        <button onClick={addRandomContact}>Add Random Contact</button>
+        <button onClick={() => sort("name")}>Sort By Name</button>
+        <button onClick={() => sort("popularity")}>Sort By Popularity</button>
       </div>
 
       {contactsJSON.length === 5 && "no more contacts to add"}
@@ -67,8 +61,8 @@ function App() {
                 </td>
                 <td>{celebrity.name}</td>
                 <td>{celebrity.popularity.toFixed(2)}</td>
-                <td>{celebrity.wonOscar ? "🏆" : ""}</td>
-                <td>{celebrity.wonEmmy ? "🥇" : ""}</td>
+                <td>{celebrity.wonOscar && "🏆"}</td>
+                <td>{celebrity.wonEmmy && "🥇"}</td>
                 <td>
                   <button onClick={() => deleteContact(celebrity.id)}>
                     Delete
